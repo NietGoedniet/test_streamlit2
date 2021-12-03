@@ -11,12 +11,12 @@ import streamlit.components.v1 as components
 # Uses st.cache to only run once.
 @st.cache(allow_output_mutation=True, hash_funcs={"_thread.RLock": lambda _: None})
 def init_connection():
-#     return mysql.connector.connect(**st.secrets["mysql"])
-    return mysql.connector.connect(user='root',
-                                   password='', 
-                                   host='127.0.0.1',
-                                   port='3306',
-                                   database='lalit')
+    return mysql.connector.connect(**st.secrets["mysql"])
+    # return mysql.connector.connect(user='root',
+    #                                password='', 
+    #                                host='127.0.0.1',
+    #                                port='3306',
+    #                                database='lalit')
 
 conn = init_connection()
 
